@@ -46,9 +46,27 @@ class ProductItem extends StatelessWidget {
             icon: const Icon(
               Icons.shopping_cart,
             ),
-            color: Colors.deepOrange,
+            // color: Colors.deepOrange,
+            color: Theme.of(context).colorScheme.secondary,
             onPressed: () {
-              cart.addItem(product.id,product. price,product. title);
+              cart.addItem(product.id, product.price, product.title);
+              // Scaffold.of(context).show
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: const Text(
+                    'Added item to cart!',
+                    // textAlign: TextAlign.center,
+                  ),
+                  duration: const Duration(seconds: 2),
+                  action: SnackBarAction(
+                    // textColor: Colors.deepOrange,
+                    label: 'UNDO',
+                    onPressed: () {
+                      cart.removeSingleItem(product.id);
+                    },
+                  ),
+                ),
+              );
             },
           ),
           backgroundColor: Colors.black87,

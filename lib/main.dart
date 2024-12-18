@@ -32,9 +32,10 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Application',
-        theme: ThemeData(
+        theme: ThemeData().copyWith(
           primaryColor: Colors.purple,
-          fontFamily: 'Lato',
+          colorScheme: ThemeData().colorScheme.copyWith(secondary: Colors.deepOrange),
+          // fontFamily: 'Lato',
           // accentColor: Colors.deepOrange,
         ),
         home: const ProductsOverviewScreen(),
