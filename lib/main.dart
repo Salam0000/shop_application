@@ -7,6 +7,7 @@ import 'package:quiz_application/screens/orders_screen.dart';
 import 'package:quiz_application/screens/product_detail_screen.dart';
 import 'package:quiz_application/screens/products_overview_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:quiz_application/screens/user_product_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Application',
         theme: ThemeData().copyWith(
           primaryColor: Colors.purple,
-          colorScheme: ThemeData().colorScheme.copyWith(secondary: Colors.deepOrange),
+          colorScheme:
+              ThemeData().colorScheme.copyWith(secondary: Colors.deepOrange),
           // fontFamily: 'Lato',
           // accentColor: Colors.deepOrange,
         ),
@@ -44,6 +46,7 @@ class MyApp extends StatelessWidget {
               const ProductDetailScreen(),
           CartScreen.routeName: (context) => const CartScreen(),
           OrdersScreen.routeName: (context) => const OrdersScreen(),
+          UserProductScreen.routeName: (context) => const UserProductScreen(),
         },
       ),
     );
