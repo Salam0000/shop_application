@@ -62,7 +62,7 @@ class ProductItem extends StatelessWidget {
                     // textColor: Colors.deepOrange,
                     label: 'UNDO',
                     onPressed: () {
-                      cart.removeSingleItem(product.id);
+                      cart.removeSingleItem(product.id!);
                     },
                   ),
                 ),
