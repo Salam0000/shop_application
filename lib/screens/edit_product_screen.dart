@@ -51,6 +51,10 @@ class _EditProductScreenState extends State<EditProductScreen> {
   }
 
   void _saveForms() {
+    final isValid = _form.currentState!.validate();
+    if (!isValid) {
+      return;
+    }
     _form.currentState?.save();
     // print(_editedProduct.title);
     // print(_editedProduct.description);
@@ -93,6 +97,12 @@ class _EditProductScreenState extends State<EditProductScreen> {
                     price: _editedProduct.price,
                     imageUrl: _editedProduct.imageUrl,
                   );
+                },
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Please provide a value.';
+                  }
+                  return null; //everything fine no error exist :)
                 },
               ),
               TextFormField(
